@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory name="foo">
+<!--
+
+        &lt;!&ndash;  配置   打印sql语句到控制台   可选 &ndash;&gt;
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+        &lt;!&ndash;
+            （重要配置）Hibernate自动建表 配置
+            create：先删除，再创建
+            update：如果表不存在就创建，不一样就更新，一样就什么都不做。
+            create-drop：初始化时创建表，SessionFactory执行close()时删除表。
+            validate：验证表结构是否一致，如果不一致，就抛异常。
+         &ndash;&gt;
+        <property name="hbm2ddl.auto">update</property>
+
+        &lt;!&ndash;
+            设置默认的事务隔离级别：
+            隔离级别        对应的整数表示
+            READ UNCOMMITED 1
+            READ COMMITED   2
+            REPEATABLE READ 4
+            SERIALIZEABLE   8
+         &ndash;&gt;
+        <property name="connection.isolation">4</property>
+
+        &lt;!&ndash; 使用二级缓存，默认是未打开的。 &ndash;&gt;
+        &lt;!&ndash; 指定要使用的缓存的提供商，这也就打开了二级缓存&ndash;&gt;
+        <property name="cache.provider_class">org.hibernate.cache.HashtableCacheProvider</property>
+        <property name="cache.provider_class">org.hibernate.cache.EhCacheProvider</property>
+
+        &lt;!&ndash; 开启使用查询缓存&ndash;&gt;
+        <property name="cache.use_query_cache">true</property>
+
+        &lt;!&ndash; 指定要使用二级缓存的实体类
+        <class-cache usage="read-write" class="cn.itcast.l_second_cache.Employee"/>
+        <class-cache usage="read-write" class="cn.itcast.l_second_cache.Department"/>
+        <collection-cache usage="read-write" collection="cn.itcast.l_second_cache.Department.employees"/>
+        &ndash;&gt;
+
+        &lt;!&ndash; 导入映射文件 &ndash;&gt;
+        <mapping resource="classpath*:com/yzb/ssh/hbmxml/*.hbm.xml"/>
+-->
+
+    </session-factory>
+</hibernate-configuration>

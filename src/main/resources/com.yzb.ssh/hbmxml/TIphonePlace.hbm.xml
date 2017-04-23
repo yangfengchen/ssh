@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.yzb.ssh.entity.TIphonePlace" table="t_iphone_place" catalog="ssh"  lazy="true">
+        <id name="id" type="java.lang.String">
+            <column name="id" length="30" />
+            <generator class="assigned" />
+        </id>
+        <property name="place" type="java.lang.String">
+            <column name="place" length="30" />
+        </property>
+        <!--<property name="iphoneId" type="java.lang.String">
+            <column name="iphone_id" length="300" />
+        </property>-->
+
+        <many-to-one name="tIphone" class="com.yzb.ssh.entity.TIphone"  lazy="proxy">
+            <column name = "iphone_id"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>
